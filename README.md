@@ -1,4 +1,4 @@
-Draw different types of lines on the canvas.
+Draw different types of lines on the canvas from the generated paths.
 
 Available types:
 - Dashed            __ __ __ __ __ __ __ __ __ __ __ __ __

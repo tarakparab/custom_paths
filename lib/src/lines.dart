@@ -24,7 +24,7 @@ class Line {
 
   // Normalised components
   double get ux => x / length;
-  double get dy => y / length;
+  double get uy => y / length;
 
   Path get path {
     final path = Path();
@@ -64,16 +64,16 @@ class DashedLine extends Line {
     for (var i = 0; i < _nrOfCompleteSegments; i++) {
       path.moveTo(startX, startY);
       final endX = startX + ux * dashLength;
-      final endY = startY + dy * dashLength;
+      final endY = startY + uy * dashLength;
       path.lineTo(endX, endY);
       startX += ux * _segmentLength;
-      startY += dy * _segmentLength;
+      startY += uy * _segmentLength;
     }
 
     // Create remaining fraction of dash
     path.moveTo(startX, startY);
     final endX = startX + ux * _endFractionLength;
-    final endY = startY + dy * _endFractionLength;
+    final endY = startY + uy * _endFractionLength;
     path.lineTo(endX, endY);
 
     return path;
@@ -104,15 +104,15 @@ class DoubleDashedLine extends DashedLine {
     final dash2Start = dashLength + space1Length;
 
     double startX = p1.dx + ux * dash2Start;
-    double startY = p1.dy + dy * dash2Start;
+    double startY = p1.dy + uy * dash2Start;
 
     for (var i = 0; i < _nrOfCompleteSegments; i++) {
       path.moveTo(startX, startY);
       final endX = startX + ux * dash2Length;
-      final endY = startY + dy * dash2Length;
+      final endY = startY + uy * dash2Length;
       path.lineTo(endX, endY);
       startX += ux * _segmentLength;
-      startY += dy * _segmentLength;
+      startY += uy * _segmentLength;
     }
 
     return path;

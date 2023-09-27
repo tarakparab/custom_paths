@@ -1,6 +1,9 @@
 name: custom_paths
-description: A new Flutter package project.
-version: 0.0.1
+description: Draw different types of lines on the canvas from the generated paths.
+
+publish_to: 'none' 
+
+version: 0.0.2
 homepage:
 
 environment:
